@@ -147,7 +147,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     paddingVertical: 10,
     backgroundColor: '#000',
-    borderTopColor: '#111',
+    borderTopColor: '#fff', 
     borderTopWidth: 1,
   },
   tabIcon: {
