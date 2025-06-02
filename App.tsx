@@ -17,17 +17,24 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.container}>
-      {/* ===== BALANCE ROW ===== */}
-      <View style={styles.balanceContainer}>
-        <Text style={styles.dollarSign}>$</Text>
-        <Text style={styles.balanceText}>••••••••</Text>
-        {/* Eye icon is clickable */}
-        <TouchableOpacity onPress={showAlert} style={styles.eyeIcon}>
-          <Text style={styles.balanceIcon}>👁️</Text>
-        </TouchableOpacity>
+      {/* ===== INDEX ROW ===== */}
+      <View style={styles.topIndex}>
+        <Text style={styles.notificationIcon}>🔔</Text>
+        <Text style={styles.homeIndex}>Home</Text>
+        <Text style={styles.rewardsIcon}>🎁</Text>
+        <Text style={styles.profileIcon}>👤</Text>
       </View>
 
+      {/* ===== BALANCE ROW ===== */}
       <ScrollView contentContainerStyle={styles.scrollContent}>
+        <View style={styles.balanceContainer}>
+          <Text style={styles.dollarSign}>$</Text>
+          <Text style={styles.balanceText}>••••••••</Text>
+          {/* Eye icon is clickable */}
+          <TouchableOpacity onPress={showAlert} style={styles.eyeIcon}>
+            <Text style={styles.balanceIcon}>👁️</Text>
+          </TouchableOpacity>
+        </View>
         {/* ===== TIME RANGE BUTTONS ===== */}
         <View style={styles.timeRangeContainer}>
           <View style={styles.timeButton}>
@@ -56,6 +63,18 @@ export default function App() {
             </Text>
           </TouchableOpacity>
         </View>
+
+        <View style={styles.accountSection}>
+          <Text style={styles.accountText}>Accounts</Text>
+          <View style={styles.accounts}>
+            <Text style={styles.accountName}>Cash</Text>
+            <Text style={styles.accountType}>Chequing</Text>
+          </View>
+          <View style={styles.accounts}>
+            <Text style={styles.accountName}>Non-registered</Text>
+            <Text style={styles.accountType}>Non-registered</Text>
+          </View>
+        </View>
       </ScrollView>
 
       {/* ===== BOTTOM TAB BAR ===== */}
@@ -81,7 +100,41 @@ const styles = StyleSheet.create({
   /* ============== CONTAINER ============== */
   container: {
     flex: 1,
-    backgroundColor: '#000',
+    color: '##f1f0f0',
+    backgroundColor: '#181716',
+  },
+
+  /* ============== HEADER ROW ================== */
+  topIndex: {
+    flexDirection: 'row',
+    backgroundColor: '#181716',
+    justifyContent: 'center',
+  },
+  notificationIcon: {
+    color: '#fff',
+    fontSize: 27,
+    margin: 15,
+  },
+  homeIndex: {
+    textAlign: 'center',
+    color: '#fff',
+    fontSize: 20,
+    fontWeight: '600',
+    letterSpacing: 2,
+    marginTop: 16,
+    paddingLeft: 48,
+    flexGrow: 2,
+  },
+  rewardsIcon: {
+    color: '#fff',
+    fontSize: 27,
+    margin: 15,
+  },
+  profileIcon: {
+    color: '#fff',
+    fontSize: 27,
+    margin: 15,
+    marginLeft: 0,
   },
 
   /* ============== BALANCE ROW ============== */
@@ -122,23 +175,57 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     marginHorizontal: 16,
     marginTop: 20,
+    padding: 5,
+    backgroundColor: '#343332',
+    borderRadius: 20,
+    
   },
   timeButton: {
-    paddingHorizontal: 8,
+    paddingHorizontal: 10,
     paddingVertical: 6,
-    borderRadius: 12,
-    backgroundColor: '#111',
+    borderRadius: 20,
   },
   timeButtonActive: {
-    backgroundColor: '#0f0',
+    backgroundColor: '#615e5c',
   },
   timeButtonText: {
     fontSize: 12,
-    color: '#888',
+    color: '#fff',
     fontWeight: '500',
   },
   timeButtonTextActive: {
-    color: '#000',
+    color: '#fff',
+  },
+
+  /* ===== Accounts ===== */
+  accountSection: {
+    marginHorizontal: 16,
+    marginTop: 20,
+  },
+  accountText: {
+    marginTop:20,
+    fontSize: 20,
+    color: '#d3d3d3',
+    fontWeight: '600',
+  },
+  accounts: {
+    fontSize: 18,
+    marginTop: 20,
+    padding: 10,
+    backgroundColor: '#32302f',
+    borderRadius: 15,
+  },
+  accountName: {
+    color: '#f1f0f0',
+    padding: 4,
+    fontSize: 18,
+    fontWeight: 600,
+  },
+  accountType: {
+    color: '#b0b0b0',
+    padding: 4,
+    fontSize: 15,
+    fontWeight: 600,
   },
 
   /* ===== BOTTOM TABS ===== */
@@ -146,7 +233,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     paddingVertical: 10,
-    backgroundColor: '#000',
+    backgroundColor: '#181716',
     borderTopColor: '#fff', 
     borderTopWidth: 1,
   },
