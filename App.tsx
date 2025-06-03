@@ -66,7 +66,7 @@ export default function App() {
         </View>
         
         <Image
-          source={{ uri: 'https://static.thenounproject.com/png/1286471-200.png' }}
+          source={require('./assets/my-graph.png')}
           style={styles.graphImage}
           resizeMode="contain"
         />
