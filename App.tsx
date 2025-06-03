@@ -1,4 +1,5 @@
 // App.tsx
+import { Image } from 'react-native';
 import React from 'react';
 import {
   SafeAreaView,
@@ -63,6 +64,12 @@ export default function App() {
             </Text>
           </TouchableOpacity>
         </View>
+        
+        <Image
+          source={{ uri: 'https://static.thenounproject.com/png/1286471-200.png' }}
+          style={styles.graphImage}
+          resizeMode="contain"
+        />
 
         <View style={styles.accountSection}>
           <Text style={styles.accountText}>Accounts</Text>
@@ -195,6 +202,12 @@ const styles = StyleSheet.create({
   },
   timeButtonTextActive: {
     color: '#fff',
+  },
+  graphImage: {
+    width: '100%',
+    height: 200,
+    marginTop: 20,
+    alignSelf: 'center',
   },
 
   /* ===== Accounts ===== */
